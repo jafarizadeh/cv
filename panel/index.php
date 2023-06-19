@@ -1,5 +1,7 @@
 <?php
 include_once "../controllers/connection.php";
+include_once "controllers/main.php";
+include_once "controllers/router.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +47,10 @@ include_once "../controllers/connection.php";
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <?php include_once "modules/main.php"?>
+                <?php
+                $ROUTER = new Router();
+                $ROUTER->route();
+                ?>
                 <!-- /.container-fluid -->
 
             </div>
