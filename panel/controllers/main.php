@@ -25,4 +25,19 @@ function postParam($param_name)
         return null;
     }
 }
+
+function includeByCheck($path, $path404="")
+{
+    if (file_exists($path))
+    {
+        include_once $path;
+    }
+    else
+    {
+        if ($path404 != '')
+        {
+            header ("location: $path404");
+        }
+    }
+}
 ?>
