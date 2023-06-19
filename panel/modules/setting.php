@@ -70,7 +70,7 @@ function updatePublicSettingTable()
             <div class="col-3">
                 <div class="form-group">
                     <label for="fbId">Linkedin Link :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="Limkedin" aria-describedby="emailHelp" placeholder="Enter Linkedin Link..." value="<?= $general_info_data['firstName'] ?>">
+                    <input type="text" class="form-control form-control-user" id="fbId" name="linkedin" aria-describedby="emailHelp" placeholder="Enter Linkedin Link..." value="<?= $general_info_data['linkedin'] ?>">
                 </div>
             </div>
             <div class="col-3">
@@ -119,7 +119,7 @@ function updatePublicSettingTable()
                 <input type="submit" name="submitPublicSettingForm" class="btn btn-primary btn-user btn-block" value="Save Public Setting">
             </div>
         </div>
-        
+
     </form>
     <br>
     <div id="result">
