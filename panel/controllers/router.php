@@ -2,6 +2,7 @@
 class Router
 {
     private $module_folder_name = 'modules';
+    private $main_module_name = 'index.php?module=main';
     function Router()
     {
 
@@ -11,17 +12,25 @@ class Router
     {
         $module_value = getParam('module');
         $folder = $this->module_folder_name;
-        switch($module_value)
+        if ($module_value == null)
         {
-            case 'main':
-                include_once "$folder/main.php";
-                break;
-            case 'setting':
-                break;
-            default:
-                include_once "$folder/404.php";
-                // load 404 page
+            $main = $this -> main_module_name;
+            header("location: $main");
+        }
+        else
+        {
+            switch($module_value)
+            {
+                case 'main':
+                    include_once "$folder/main.php";
+                    break;
+                case 'setting':
+                    break;
+                default:
+                    include_once "$folder/404.php";
+                    // load 404 page
 
+            }
         }
     }
 }
