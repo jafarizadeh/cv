@@ -31,7 +31,8 @@ function updatePublicSettingTable()
         } else {
             return 1;
         }
-    } else {
+    } // when clicked is statement
+    else {
         return 0;
     }
 }
@@ -132,10 +133,9 @@ function updatePublicSettingTable()
     <br>
     <div id="result">
         <?php $status = updatePublicSettingTable(); ?>
-        <?php if ($status == 2) : ?>
-            <div class="alert alert-success">Public Setting Update Successfully.</div>
+        <?php if ($status == 2) : header('location: index.php?module=setting');?>
         <?php elseif ($status == 1) : ?>
             <div class="alert alert-danger">Public Setting Updating Failed!</div>
-        <?php endif ?>
+        <?php endif; ?>
     </div>
 </div>
