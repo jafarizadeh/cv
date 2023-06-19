@@ -43,26 +43,34 @@ function updatePublicSettingTable()
         <div class="row">
             <div class="col-3">
                 <div class="form-group">
+                    <label for="fbId">Web Title :</label>
+                    <input type="text" class="form-control form-control-user" id="fbId" name="webTitle" placeholder="Enter Web Title..." value="<?= $general_info_data['webTitle'] ?>">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group">
                     <label for="fbId">First Name :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="firstName" aria-describedby="emailHelp" placeholder="Enter First Name..." value="<?= $general_info_data['firstName'] ?>">
+                    <input type="text" class="form-control form-control-user" id="fbId" name="firstName" placeholder="Enter First Name..." value="<?= $general_info_data['firstName'] ?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
                     <label for="fbId">Last Name :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="lastName" aria-describedby="emailHelp" placeholder="Enter last Name..." value="<?= $general_info_data['lastName'] ?>">
+                    <input type="text" class="form-control form-control-user" id="fbId" name="lastName"  placeholder="Enter last Name..." value="<?= $general_info_data['lastName'] ?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
                     <label for="fbId">Phone Number :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="tel" aria-describedby="emailHelp" placeholder="Enter Phone Number..." value="<?= $general_info_data['tel'] ?>">
+                    <input type="text" class="form-control form-control-user" id="fbId" name="tel" placeholder="Enter Phone Number..." value="<?= $general_info_data['tel'] ?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
                     <label for="fbId">Email Address :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="email" aria-describedby="emailHelp" placeholder="Enter Email Address..." value="<?= $general_info_data['email'] ?>">
+                    <input type="text" class="form-control form-control-user" id="fbId" name="email" placeholder="Enter Email Address..." value="<?= $general_info_data['email'] ?>">
                 </div>
             </div>
         </div>
@@ -70,25 +78,25 @@ function updatePublicSettingTable()
             <div class="col-3">
                 <div class="form-group">
                     <label for="fbId">Linkedin Link :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="linkedin" aria-describedby="emailHelp" placeholder="Enter Linkedin Link..." value="<?= $general_info_data['linkedin'] ?>">
+                    <input type="text" class="form-control form-control-user" id="fbId" name="linkedin" placeholder="Enter Linkedin Link..." value="<?= $general_info_data['linkedin'] ?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
                     <label for="fbId">Facebook Link :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="facebook" aria-describedby="emailHelp" placeholder="Enter Facebook Link..." value="<?= $general_info_data['facebook'] ?>">
+                    <input type="text" class="form-control form-control-user" id="fbId" name="facebook" placeholder="Enter Facebook Link..." value="<?= $general_info_data['facebook'] ?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
                     <label for="fbId">Twitter Link :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="twitter" aria-describedby="emailHelp" placeholder="Enter Twitter Link..." value="<?= $general_info_data['twitter'] ?>">
+                    <input type="text" class="form-control form-control-user" id="fbId" name="twitter" placeholder="Enter Twitter Link..." value="<?= $general_info_data['twitter'] ?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
                     <label for="fbId">Github Link :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="github" aria-describedby="emailHelp" placeholder="Enter Ginhub Link..." value="<?= $general_info_data['github'] ?>">
+                    <input type="text" class="form-control form-control-user" id="fbId" name="github" placeholder="Enter Ginhub Link..." value="<?= $general_info_data['github'] ?>">
                 </div>
             </div>
         </div>
