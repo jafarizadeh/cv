@@ -12,7 +12,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li class="nav-item <?= checkModuleInSidebar('main'); ?>">
         <a class="nav-link" href="index.php">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
@@ -27,7 +27,7 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+    <li class="nav-item <?= checkModuleInSidebar('setting'); ?>">
         <a class="nav-link" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>setting">
             <i class="fas fa-fw fa-cog"></i>
             <span>Public setting</span></a>

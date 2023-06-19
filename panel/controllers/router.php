@@ -13,33 +13,23 @@ class Router
 
     function Router()
     {
-
     }
 
     function route()
     {
         $module_value = getParam('module');
         $folder = $this->module_folder_name;
-        $path404 = $this -> path404;
-        if ($module_value == null)
-        {
-            $main = $this -> main_module_name;
+        $path404 = $this->path404;
+        if ($module_value == null) {
+            $main = $this->main_module_name;
             header("location: $main");
-        }
-        else
-        {
-            $myModules = $this -> modules;
-            if (!isset($myModules[$module_value]))
-            {
-                includeByCheck ($folder.'/'.$myModules['default'], $path404);
-            }
-            else
-            {
-                includeByCheck ($folder.'/'.$myModules[$module_value], $path404);
+        } else {
+            $myModules = $this->modules;
+            if (!isset($myModules[$module_value])) {
+                includeByCheck($folder . '/' . $myModules['default'], $path404);
+            } else {
+                includeByCheck($folder . '/' . $myModules[$module_value], $path404);
             }
         }
     }
 }
-
-
-?>

@@ -21,6 +21,23 @@ function postParam($param_name)
     }
 }
 
+function getCurrentModule()
+{
+    $module = getParam('module');
+    if ($module != null) {
+        return $module;
+    } else {
+        return '';
+    }
+}
+
+function checkModuleInSidebar($index = '')
+{
+    if (getCurrentModule() == $index) {
+        return 'active';
+    }
+}
+
 function includeByCheck($path, $path404 = "")
 {
     if (file_exists($path)) {
