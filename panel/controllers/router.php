@@ -8,6 +8,8 @@ class Router
     [
         'main' => 'main.php',
         'setting' => 'setting.php',
+        'add_exp' => 'add_exp.php',
+        'exps' => 'exps.php',
         'default' => '404.php'
     ];
 

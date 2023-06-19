@@ -44,82 +44,82 @@ function updatePublicSettingTable()
         <div class="row">
             <div class="col-3">
                 <div class="form-group">
-                    <label for="fbId">Web Title :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="webTitle" placeholder="Enter Web Title..." value="<?= $general_info_data['webTitle'] ?>">
+                    <label for="webTitleId">Web Title :</label>
+                    <input type="text" class="form-control form-control-user" id="webTitleId" name="webTitle" placeholder="Enter Web Title..." value="<?= $general_info_data['webTitle'] ?>">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-3">
                 <div class="form-group">
-                    <label for="fbId">First Name :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="firstName" placeholder="Enter First Name..." value="<?= $general_info_data['firstName'] ?>">
+                    <label for="firstNameId">First Name :</label>
+                    <input type="text" class="form-control form-control-user" id="firstNameId" name="firstName" placeholder="Enter First Name..." value="<?= $general_info_data['firstName'] ?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
-                    <label for="fbId">Last Name :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="lastName"  placeholder="Enter last Name..." value="<?= $general_info_data['lastName'] ?>">
+                    <label for="lastNameId">Last Name :</label>
+                    <input type="text" class="form-control form-control-user" id="lastNameId" name="lastName"  placeholder="Enter last Name..." value="<?= $general_info_data['lastName'] ?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
-                    <label for="fbId">Phone Number :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="tel" placeholder="Enter Phone Number..." value="<?= $general_info_data['tel'] ?>">
+                    <label for="phoneNumberId">Phone Number :</label>
+                    <input type="text" class="form-control form-control-user" id="phoneNumberId" name="tel" placeholder="Enter Phone Number..." value="<?= $general_info_data['tel'] ?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
-                    <label for="fbId">Email Address :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="email" placeholder="Enter Email Address..." value="<?= $general_info_data['email'] ?>">
+                    <label for="emailId">Email Address :</label>
+                    <input type="text" class="form-control form-control-user" id="emailId" name="email" placeholder="Enter Email Address..." value="<?= $general_info_data['email'] ?>">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-3">
                 <div class="form-group">
-                    <label for="fbId">Linkedin Link :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="linkedin" placeholder="Enter Linkedin Link..." value="<?= $general_info_data['linkedin'] ?>">
+                    <label for="linkedinId">Linkedin Link :</label>
+                    <input type="text" class="form-control form-control-user" id="linkedinId" name="linkedin" placeholder="Enter Linkedin Link..." value="<?= $general_info_data['linkedin'] ?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
-                    <label for="fbId">Facebook Link :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="facebook" placeholder="Enter Facebook Link..." value="<?= $general_info_data['facebook'] ?>">
+                    <label for="facebookId">Facebook Link :</label>
+                    <input type="text" class="form-control form-control-user" id="facebookId" name="facebook" placeholder="Enter Facebook Link..." value="<?= $general_info_data['facebook'] ?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
-                    <label for="fbId">Twitter Link :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="twitter" placeholder="Enter Twitter Link..." value="<?= $general_info_data['twitter'] ?>">
+                    <label for="twitterId">Twitter Link :</label>
+                    <input type="text" class="form-control form-control-user" id="twitterId" name="twitter" placeholder="Enter Twitter Link..." value="<?= $general_info_data['twitter'] ?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
-                    <label for="fbId">Github Link :</label>
-                    <input type="text" class="form-control form-control-user" id="fbId" name="github" placeholder="Enter Ginhub Link..." value="<?= $general_info_data['github'] ?>">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <div class="form-group">
-                    <label for="fbId">About Text :</label>
-                    <textarea class="form-control form-control-user" id="fbId" name="about" placeholder="Enter about text..." value="<?= $general_info_data['about'] ?>"></textarea>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="form-group">
-                    <label for="fbId">Interests Text :</label>
-                    <textarea class="form-control form-control-user" id="fbId" name="interests" placeholder="Enter interests text..." value="<?= $general_info_data['interests'] ?>"></textarea>
+                    <label for="githubId">Github Link :</label>
+                    <input type="text" class="form-control form-control-user" id="githubId" name="github" placeholder="Enter Ginhub Link..." value="<?= $general_info_data['github'] ?>">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-6">
                 <div class="form-group">
-                    <label for="fbId">Address :</label>
-                    <textarea class="form-control form-control-user" id="fbId" name="address" placeholder="Enter Postal Address..." value="<?= $general_info_data['address'] ?>"></textarea>
+                    <label for="aboutId">About Text :</label>
+                    <textarea class="form-control form-control-user" id="aboutId" name="about" placeholder="Enter about text..." value="<?= $general_info_data['about'] ?>"></textarea>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="interestsId">Interests Text :</label>
+                    <textarea class="form-control form-control-user" id="fbId" name="interestsId" placeholder="Enter interests text..." value="<?= $general_info_data['interests'] ?>"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="addressId">Address :</label>
+                    <textarea class="form-control form-control-user" id="addressId" name="address" placeholder="Enter Postal Address..." value="<?= $general_info_data['address'] ?>"></textarea>
                 </div>
             </div>
         </div>
