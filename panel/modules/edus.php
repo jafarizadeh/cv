@@ -32,7 +32,9 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` ORDER BY `id
                                     <span onclick="removeRecordFromTable('<?= $row['id']; ?>', 'tr_<?= $row['id']; ?>', 'edu');" class="fa fa-trash" style="color:firebrick; cursor: pointer"></span>
                                     &nbsp;
                                     &nbsp;
-                                    <span class="fa fa-edit" style="color:cadetblue; cursor: pointer"></span>
+                                    <a href="<?= $GLOBALS['PANEL_ROUTE_MAIN_ADR']; ?>add_edu&id=<?=$row['id']?>">
+                                        <span class="fa fa-edit" style="color:cadetblue; cursor: pointer"></span>
+                                    </a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
