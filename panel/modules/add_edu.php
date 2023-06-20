@@ -1,4 +1,9 @@
 <?php
+$id = getParam('id');
+$isEditPage = false;
+if ($id != null) {
+    $isEditPage = true;
+}
 $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` WHERE `id` = '1' limit 1");
 $general_info_data = mysqli_fetch_array($select);
 
@@ -31,7 +36,12 @@ function addEduTable()
 ?>
 
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Add Education</h1>
+    <?php if ($isEditPage) : ?>
+        <h1 class="h3 mb-4 text-gray-800">Edit Education</h1>
+    <?php else : ?>
+        <h1 class="h3 mb-4 text-gray-800">Add Education</h1>
+    <?php endif; ?>
+
     <form method="post">
         <div class="row">
             <div class="col-3">
@@ -71,7 +81,11 @@ function addEduTable()
         </div>
         <div class="row">
             <div class="col-3">
-                <input type="submit" name="submitAddEduForm" class="btn btn-primary btn-user btn-block" value="Add Education">
+                <?php if ($isEditPage) : ?>
+                    <input type="submit" name="submitEditEduForm" class="btn btn-primary btn-user btn-block" value="Edit Education">
+                <?php else : ?>
+                    <input type="submit" name="submitAddEduForm" class="btn btn-primary btn-user btn-block" value="Add Education">
+                <?php endif; ?>
             </div>
         </div>
     </form>
@@ -79,9 +93,19 @@ function addEduTable()
     <div id="result">
         <?php $status = addEduTable(); ?>
         <?php if ($status == 2) : ?>
-            <div class="alert alert-success">Education Added Successfully.</div>
+            <?php if ($isEditPage) : ?>
+                <div class="alert alert-success">Education Edited Successfully.</div>
+            <?php else : ?>
+                <div class="alert alert-success">Education Added Successfully.</div>
+            <?php endif; ?>
+
         <?php elseif ($status == 1) : ?>
-            <div class="alert alert-danger">Adding Education Failed!</div>
+            <?php if ($isEditPage) : ?>
+                <div class="alert alert-danger">Editing Education Failed!</div>
+            <?php else : ?>
+                <div class="alert alert-danger">Adding Education Failed!</div>
+            <?php endif; ?>
+
         <?php elseif ($status == 3) : ?>
             <div class="alert alert-danger">Please Enter Required Filed!</div>
         <?php endif; ?>
