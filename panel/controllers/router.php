@@ -10,6 +10,8 @@ class Router
         'setting' => 'setting.php',
         'add_exp' => 'add_exp.php',
         'exps' => 'exps.php',
+        'add_edu' => 'add_edu.php',
+        'edus' => 'edus.php',
         'default' => '404.php'
     ];
 

@@ -1,10 +1,10 @@
 <?php
-$select = mysqli_query($GLOBALS['con'], "SELECT * FROM `experience` WHERE `id` = '1' limit 1");
+$select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` WHERE `id` = '1' limit 1");
 $general_info_data = mysqli_fetch_array($select);
 
-function addExpTable()
+function addEduTable()
 {
-    if (postParam('submitAddExpForm') != null) {
+    if (postParam('submitAddEduForm') != null) {
         $title = postParam('title') != null ? postParam('title') : '';
         $sub_title = postParam('subTitle') != null ? postParam('subTitle') : '';
         $content = postParam('content') != null ? postParam('content') : '';
@@ -12,7 +12,7 @@ function addExpTable()
         $to_date = postParam('toDate') != null ? postParam('toDate') : '';
 
         if (!empty($title) && !empty($sub_title) && !empty($content)) {
-            $select = mysqli_query($GLOBALS['con'], "INSERT INTO `experience` (`title`, `subtitle`, `content`,
+            $select = mysqli_query($GLOBALS['con'], "INSERT INTO `educations` (`title`, `subtitle`, `content`,
             `fromDate`, `toDate`) VALUES ('$title', '$sub_title', '$content', '$from_date', '$to_date')");
 
             if ($select) {
@@ -31,7 +31,7 @@ function addExpTable()
 ?>
 
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Add Experience</h1>
+    <h1 class="h3 mb-4 text-gray-800">Add Education</h1>
     <form method="post">
         <div class="row">
             <div class="col-3">
@@ -71,17 +71,17 @@ function addExpTable()
         </div>
         <div class="row">
             <div class="col-3">
-                <input type="submit" name="submitAddExpForm" class="btn btn-primary btn-user btn-block" value="Add Experience">
+                <input type="submit" name="submitAddEduForm" class="btn btn-primary btn-user btn-block" value="Add Education">
             </div>
         </div>
     </form>
     <br>
     <div id="result">
-        <?php $status = addExpTable(); ?>
+        <?php $status = addEduTable(); ?>
         <?php if ($status == 2) : ?>
-            <div class="alert alert-success">Experience Added Successfully.</div>
+            <div class="alert alert-success">Education Added Successfully.</div>
         <?php elseif ($status == 1) : ?>
-            <div class="alert alert-danger">Adding Experience Failed!</div>
+            <div class="alert alert-danger">Adding Education Failed!</div>
         <?php elseif ($status == 3) : ?>
             <div class="alert alert-danger">Please Enter Required Filed!</div>
         <?php endif; ?>
