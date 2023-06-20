@@ -21,14 +21,16 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `experience` ORDER BY `id
                     </thead>
                     <tbody>
                         <?php while ($row = mysqli_fetch_array($select)) : ?>
-                            <tr>
-                                <td><?= $row['id'] ?></td>
-                                <td><?= $row['title'] ?></td>
-                                <td><?= $row['subtitle'] ?></td>
-                                <td><?= $row['content'] ?></td>
-                                <td><?= $row['fromDate'] ?></td>
-                                <td><?= $row['toDate'] ?></td>
-                                <td><?= $row[''] ?></td>
+                            <tr id="tr_<?= $row['id']; ?>">
+                                <td><?= $row['id']; ?></td>
+                                <td><?= $row['title']; ?></td>
+                                <td><?= $row['subtitle']; ?></td>
+                                <td><?= $row['content']; ?></td>
+                                <td><?= $row['fromDate']; ?></td>
+                                <td><?= $row['toDate']; ?></td>
+                                <td>
+                                    <span onclick="removeRecordFromTable('<?= $row['id']; ?>', 'tr_<?= $row['id']; ?>', 'exp')" class="fa fa-trash" style="color:firebrick; cursor: pointer"></span>
+                                </td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
@@ -37,3 +39,22 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `experience` ORDER BY `id
         </div>
     </div>
 </div>
+
+<script>
+    function removeRecordFromTable(rowId, elemId, mod = 'exp') {
+        $('#' + elemId).css('background', 'orange');
+        $.post('controllers/ajax.php', {
+            action: 'remove_from_table',
+            recordId: rowId,
+            mod: mod
+        }, function(data) {
+            data = data.trim;
+            data = JSON.parse(data);
+            if (data.result) {
+                $('#' + elemId).remove();
+            } else {
+                $('#' + elemId).css('background', '#ffffff');
+            }
+        });
+    }
+</script>
