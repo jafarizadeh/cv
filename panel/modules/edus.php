@@ -30,6 +30,9 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` ORDER BY `id
                                 <td><?= $row['toDate']; ?></td>
                                 <td>
                                     <span onclick="removeRecordFromTable('<?= $row['id']; ?>', 'tr_<?= $row['id']; ?>', 'edu');" class="fa fa-trash" style="color:firebrick; cursor: pointer"></span>
+                                    &nbsp;
+                                    &nbsp;
+                                    <span class="fa fa-edit" style="color:cadetblue; cursor: pointer"></span>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
