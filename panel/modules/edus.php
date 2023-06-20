@@ -1,9 +1,9 @@
 <?php
-$select = mysqli_query($GLOBALS['con'], "SELECT * FROM `experience` ORDER BY `id` DESC");
+$select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` ORDER BY `id` DESC");
 ?>
 
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Experiences</h1>
+    <h1 class="h3 mb-4 text-gray-800">Educations</h1>
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
@@ -29,7 +29,7 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `experience` ORDER BY `id
                                 <td><?= $row['fromDate']; ?></td>
                                 <td><?= $row['toDate']; ?></td>
                                 <td>
-                                    <span onclick="removeRecordFromTable('<?= $row['id']; ?>', 'tr_<?= $row['id']; ?>', 'exp');" class="fa fa-trash" style="color:firebrick; cursor: pointer"></span>
+                                    <span onclick="removeRecordFromTable('<?= $row['id']; ?>', 'tr_<?= $row['id']; ?>', 'edu');" class="fa fa-trash" style="color:firebrick; cursor: pointer"></span>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
@@ -41,7 +41,7 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `experience` ORDER BY `id
 </div>
 
 <script>
-    function removeRecordFromTable(rowId, elemId, mod = 'exp') {
+    function removeRecordFromTable(rowId, elemId, mod = 'edu') {
         $('#' + elemId).css('background', 'orange');
         var confirmation = confirm("are you sure to delete this record from database?");
         if (confirmation) {

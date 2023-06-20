@@ -12,13 +12,15 @@ switch ($ACTION) {
             case 'exp':
                 $query = "DELETE FROM `experience` WHERE `id` = '$recordId'";
                 break; // break exp mod case end #
+            case 'edu':
+                $query = "DELETE FROM `educations` WHERE `id` = '$recordId'";
+                break; // break exp mod case end #
         } // end mod swith
         $result = mysqli_query($con, $query);
         if ($result) {
-            echo json_encode(['result'=>true]);
+            echo json_encode(['result' => true]);
         } else {
-            echo json_encode(['result'=>false]);
+            echo json_encode(['result' => false]);
         }
         break; //remove from table end #
 } // end switch
-?>
