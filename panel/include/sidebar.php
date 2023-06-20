@@ -26,12 +26,44 @@
         Interface
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Public setting -->
     <li class="nav-item <?= checkModuleInSidebar('setting'); ?>">
         <a class="nav-link" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>setting">
-            <i class="fas fa-fw fa-cog"></i>
+            <i class="fas fa-fw fa-user-cog"></i>
             <span>Public setting</span></a>
     </li>
+    <!-- Public setting -->
+
+    <!-- Experiences -->
+    <li class="nav-item <?= checkModuleInSidebar('add_exp'); ?> <?= checkModuleInSidebar('exps'); ?>">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseExp" aria-expanded="true" aria-controls="collapseExp">
+            <i class="fas fa-fw fa-edit"></i>
+            <span>Experiences</span>
+        </a>
+        <div id="collapseExp" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>add_exp">Add new</a>
+                <a class="collapse-item" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>exps">Show all</a>
+            </div>
+        </div>
+    </li>
+    <!-- Experiences -->
+
+    <!-- Education -->
+    <li class="nav-item <?= checkModuleInSidebar('add_edu'); ?> <?= checkModuleInSidebar('edus'); ?>">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEdu" aria-expanded="true" aria-controls="collapseEdu">
+            <i class="fas fa-fw fa-edit"></i>
+            <span>Education</span>
+        </a>
+        <div id="collapseEdu" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>add_edu">Add new</a>
+                <a class="collapse-item" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>edus">Show all</a>
+            </div>
+        </div>
+    </li>
+    <!-- Education -->
+
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
