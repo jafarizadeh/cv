@@ -43,18 +43,23 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `experience` ORDER BY `id
 <script>
     function removeRecordFromTable(rowId, elemId, mod = 'exp') {
         $('#' + elemId).css('background', 'orange');
-        $.post('controllers/ajax.php', {
-            action: 'remove_from_table',
-            recordId: rowId,
-            mod: mod
-        }, function(data) {
-            data = data.trim;
-            data = JSON.parse(data);
-            if (data.result) {
-                $('#' + elemId).remove();
-            } else {
-                $('#' + elemId).css('background', '#ffffff');
-            }
-        });
+        var confirmation = confirm("are you sure to delete this record from database?");
+        if (confirmation) {
+            $.post('controllers/ajax.php', {
+                action: 'remove_from_table',
+                recordId: rowId,
+                mod: mod
+            }, function(data) {
+                data = data.trim();
+                data = JSON.parse(data);
+                if (data.result) {
+                    $('#' + elemId).remove();
+                } else {
+                    $('#' + elemId).css('background', '#ffffff');
+                }
+            });
+        } else {
+            $('#' + elemId).css('background', '#ffffff');
+        }
     }
 </script>
