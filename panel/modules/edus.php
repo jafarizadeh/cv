@@ -2,7 +2,7 @@
 $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` ORDER BY `id` DESC");
 ?>
 
-<div class="container-fluid">
+<div class="container-fluid">z
     <h1 class="h3 mb-4 text-gray-800">Educations</h1>
     <div class="card shadow mb-4">
         <div class="card-body">
@@ -30,6 +30,11 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` ORDER BY `id
                                 <td><?= $row['toDate']; ?></td>
                                 <td>
                                     <span onclick="removeRecordFromTable('<?= $row['id']; ?>', 'tr_<?= $row['id']; ?>', 'edu');" class="fa fa-trash" style="color:firebrick; cursor: pointer"></span>
+                                    &nbsp;
+                                    &nbsp;
+                                    <a href="<?= $GLOBALS['PANEL_ROUTE_MAIN_ADR']; ?>add_edu&id=<?=$row['id'];?>">
+                                        <span class="fa fa-edit" style="color:cadetblue; cursor: pointer"></span>
+                                    </a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
