@@ -26,7 +26,7 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `skills_tools` ORDER BY `
                                     <span onclick="removeRecordFromTable('<?= $row['id']; ?>', 'tr_<?= $row['id']; ?>', 'tool_skill');" class="fa fa-trash" style="color:firebrick; cursor: pointer"></span>
                                     &nbsp;
                                     &nbsp;
-                                    <a href="<?= $GLOBALS['PANEL_ROUTE_MAIN_ADR']; ?>add_exp&id=<?=$row['id'];?>">
+                                    <a href="<?= $GLOBALS['PANEL_ROUTE_MAIN_ADR']; ?>add_tools_skills&id=<?=$row['id'];?>">
                                         <span class="fa fa-edit" style="color:cadetblue; cursor: pointer"></span>
                                     </a>
                                 </td>
