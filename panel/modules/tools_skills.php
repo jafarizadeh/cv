@@ -12,7 +12,7 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `skills_tools` ORDER BY `
                         <tr>
                             <th width="5%">#</th>
                             <th width="30%">Title</th>
-                            <th width="30%">Class Name</th>
+                            <th width="30%">Class</th>
                             <th width="25%">actions</th>
                         </tr>
                     </thead>
@@ -21,12 +21,16 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `skills_tools` ORDER BY `
                             <tr id="tr_<?= $row['id']; ?>">
                                 <td><?= $row['id']; ?></td>
                                 <td><?= $row['title']; ?></td>
-                                <td><?= $row['logo']; ?></td>
+                                <td>
+                                    <?= $row['logo']; ?>
+                                    &nbsp;&nbsp;
+                                    <i style="font-size: 25px;" class="fab <?= $row['logo']; ?>"></i>
+                                </td>
                                 <td>
                                     <span onclick="removeRecordFromTable('<?= $row['id']; ?>', 'tr_<?= $row['id']; ?>', 'tool_skill');" class="fa fa-trash" style="color:firebrick; cursor: pointer"></span>
                                     &nbsp;
                                     &nbsp;
-                                    <a href="<?= $GLOBALS['PANEL_ROUTE_MAIN_ADR']; ?>add_tools_skills&id=<?=$row['id'];?>">
+                                    <a href="<?= $GLOBALS['PANEL_ROUTE_MAIN_ADR']; ?>add_tools_skills&id=<?= $row['id']; ?>">
                                         <span class="fa fa-edit" style="color:cadetblue; cursor: pointer"></span>
                                     </a>
                                 </td>
