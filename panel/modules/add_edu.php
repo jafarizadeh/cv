@@ -44,6 +44,34 @@ function addEduTable()
         return 0;
     }
 }
+
+function updateEduTable($id)
+{
+    if (postParam('submitEditEduForm') != null) {
+        $title = postParam('title') != null ? postParam('title') : '';
+        $sub_title = postParam('subTitle') != null ? postParam('subTitle') : '';
+        $content = postParam('content') != null ? postParam('content') : '';
+        $from_date = postParam('fromDate') != null ? postParam('fromDate') : '';
+        $to_date = postParam('toDate') != null ? postParam('toDate') : '';
+
+        if (!empty($title) && !empty($sub_title) && !empty($content)) {
+            $select = mysqli_query($GLOBALS['con'], "UPDATE `educations` SET 
+            `title` = '$title', `subtitle` = '$sub_title', `content` = '$content',
+            `fromDate` = '$from_date', `toDate` = '$to_date' WHERE `id` = '$id'");
+
+            if ($select) {
+                return 2;
+            } else {
+                return 1;
+            }
+        } else {
+            return 3;
+        }
+    } // when clicked is statement
+    else {
+        return 0;
+    }
+}
 ?>
 
 <div class="container-fluid">
@@ -101,7 +129,13 @@ function addEduTable()
     </form>
     <br>
     <div id="result">
-        <?php $status = addEduTable(); ?>
+        <?php
+        if ($isEditPage) {
+            $status = updateEduTable($id);
+        } else {
+            $status = addEduTable();
+        }
+        ?>
         <?php if ($status == 2) : ?>
             <?php if ($isEditPage) : ?>
                 <div class="alert alert-success">Education Edited Successfully.</div>
