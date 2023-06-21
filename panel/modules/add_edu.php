@@ -4,11 +4,7 @@ $isEditPage = false;
 if ($id != null) {
     $isEditPage = true;
 }
-<<<<<<< HEAD
 $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` WHERE `id` = '$id' limit 1");
-=======
-$select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` WHERE `id` = '1' limit 1");
->>>>>>> Pane-edit-edu
 $general_info_data = mysqli_fetch_array($select);
 
 function checkValue($index, $isEditPage, $general_info_data)
@@ -56,19 +52,18 @@ function addEduTable()
     <?php else : ?>
         <h1 class="h3 mb-4 text-gray-800">Add Education</h1>
     <?php endif; ?>
-
     <form method="post">
         <div class="row">
             <div class="col-3">
                 <div class="form-group">
                     <label for="titleId">title :</label>
-                    <input type="text" class="form-control form-control-user" id="titleId" name="title" placeholder="Enter Title..." value="<?=checkValue('title', $isEditPage, $general_info_data);?>">
+                    <input type="text" class="form-control form-control-user" id="titleId" name="title" placeholder="Enter Title..." value="<?= checkValue('title', $isEditPage, $general_info_data); ?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
                     <label for="subTitleId">sub title :</label>
-                    <input type="text" class="form-control form-control-user" id="subTitleId" name="subTitle" placeholder="Enter Sub Title..." value="<?=checkValue('subtitle', $isEditPage, $general_info_data);?>">
+                    <input type="text" class="form-control form-control-user" id="subTitleId" name="subTitle" placeholder="Enter Sub Title..." value="<?= checkValue('subtitle', $isEditPage, $general_info_data); ?>">
                 </div>
             </div>
         </div>
@@ -76,13 +71,13 @@ function addEduTable()
             <div class="col-3">
                 <div class="form-group">
                     <label for="fromDateId">from date :</label>
-                    <input type="text" class="form-control form-control-user" id="fromDateId" name="fromDate" placeholder="Date..." value="<?=checkValue('fromDate', $isEditPage, $general_info_data);?>">
+                    <input type="text" class="form-control form-control-user" id="fromDateId" name="fromDate" placeholder="Date..." value="<?= checkValue('fromDate', $isEditPage, $general_info_data); ?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
                     <label for="toDateId">to date :</label>
-                    <input type="text" class="form-control form-control-user" id="toDateId" name="toDate" placeholder="Date..." value="<?=checkValue('toDate', $isEditPage, $general_info_data);?>">
+                    <input type="text" class="form-control form-control-user" id="toDateId" name="toDate" placeholder="Date..." value="<?= checkValue('toDate', $isEditPage, $general_info_data); ?>">
                 </div>
             </div>
         </div>
@@ -90,7 +85,7 @@ function addEduTable()
             <div class="col-6">
                 <div class="form-group">
                     <label for="contentId">content :</label>
-                    <textarea class="form-control form-control-user" id="contentId" name="content" placeholder="Enter Content..."><?=checkValue('content', $isEditPage, $general_info_data);?></textarea>
+                    <textarea class="form-control form-control-user" id="contentId" name="content" placeholder="Enter Content..."><?= checkValue('content', $isEditPage, $general_info_data); ?></textarea>
                 </div>
             </div>
         </div>
@@ -100,12 +95,7 @@ function addEduTable()
                     <input type="submit" name="submitEditEduForm" class="btn btn-primary btn-user btn-block" value="Edit Education">
                 <?php else : ?>
                     <input type="submit" name="submitAddEduForm" class="btn btn-primary btn-user btn-block" value="Add Education">
-<<<<<<< HEAD
                 <?php endif ?>
-
-=======
-                <?php endif; ?>
->>>>>>> Pane-edit-edu
             </div>
         </div>
     </form>
@@ -117,23 +107,13 @@ function addEduTable()
                 <div class="alert alert-success">Education Edited Successfully.</div>
             <?php else : ?>
                 <div class="alert alert-success">Education Added Successfully.</div>
-<<<<<<< HEAD
             <?php endif ?>
-=======
-            <?php endif; ?>
-
->>>>>>> Pane-edit-edu
         <?php elseif ($status == 1) : ?>
             <?php if ($isEditPage) : ?>
                 <div class="alert alert-danger">Editing Education Failed!</div>
             <?php else : ?>
                 <div class="alert alert-danger">Adding Education Failed!</div>
-<<<<<<< HEAD
             <?php endif ?>
-=======
-            <?php endif; ?>
-
->>>>>>> Pane-edit-edu
         <?php elseif ($status == 3) : ?>
             <div class="alert alert-danger">Please Enter Required Filed!</div>
         <?php endif; ?>
