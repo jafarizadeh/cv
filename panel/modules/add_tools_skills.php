@@ -5,7 +5,7 @@ if ($id != null) {
     $isEditPage = true;
 }
 
-$select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` WHERE `id` = '$id' limit 1");
+$select = mysqli_query($GLOBALS['con'], "SELECT * FROM `skills_tools` WHERE `id` = '$id' limit 1");
 $general_info_data = mysqli_fetch_array($select);
 
 function checkValue($index, $isEditPage, $general_info_data)
@@ -18,18 +18,14 @@ function checkValue($index, $isEditPage, $general_info_data)
     return "";
 }
 
-function addEduTable()
+function addToolSkillTable()
 {
-    if (postParam('submitAddEduForm') != null) {
+    if (postParam('submitAddToolSkillForm') != null) {
         $title = postParam('title') != null ? postParam('title') : '';
-        $sub_title = postParam('subTitle') != null ? postParam('subTitle') : '';
-        $content = postParam('content') != null ? postParam('content') : '';
-        $from_date = postParam('fromDate') != null ? postParam('fromDate') : '';
-        $to_date = postParam('toDate') != null ? postParam('toDate') : '';
+        $className = postParam('className') != null ? postParam('className') : '';
 
-        if (!empty($title) && !empty($sub_title) && !empty($content)) {
-            $select = mysqli_query($GLOBALS['con'], "INSERT INTO `educations` (`title`, `subtitle`, `content`,
-            `fromDate`, `toDate`) VALUES ('$title', '$sub_title', '$content', '$from_date', '$to_date')");
+        if (!empty($title) || !empty($className)) {
+            $select = mysqli_query($GLOBALS['con'], "INSERT INTO `skills_tools` (`title`, `logo`) VALUES ('$title', '$className')");
 
             if ($select) {
                 return 2;
@@ -45,19 +41,15 @@ function addEduTable()
     }
 }
 
-function updateEduTable($id)
+function updateToolSkillTable($id)
 {
-    if (postParam('submitEditEduForm') != null) {
+    if (postParam('submitEditToolSkillForm') != null) {
         $title = postParam('title') != null ? postParam('title') : '';
-        $sub_title = postParam('subTitle') != null ? postParam('subTitle') : '';
-        $content = postParam('content') != null ? postParam('content') : '';
-        $from_date = postParam('fromDate') != null ? postParam('fromDate') : '';
-        $to_date = postParam('toDate') != null ? postParam('toDate') : '';
+        $className = postParam('className') != null ? postParam('className') : '';
 
-        if (!empty($title) && !empty($sub_title) && !empty($content)) {
-            $select = mysqli_query($GLOBALS['con'], "UPDATE `educations` SET 
-            `title` = '$title', `subtitle` = '$sub_title', `content` = '$content',
-            `fromDate` = '$from_date', `toDate` = '$to_date' WHERE `id` = '$id'");
+        if (!empty($title) || !empty($className)) {
+            $select = mysqli_query($GLOBALS['con'], "UPDATE `skills_tools` SET 
+            `title` = '$title', `logo` = '$className' WHERE `id` = '$id'");
 
             if ($select) {
                 return 2;
@@ -90,39 +82,17 @@ function updateEduTable($id)
             </div>
             <div class="col-3">
                 <div class="form-group">
-                    <label for="subTitleId">sub title :</label>
-                    <input type="text" class="form-control form-control-user" id="subTitleId" name="subTitle" placeholder="Enter Sub Title..." value="<?= checkValue('subtitle', $isEditPage, $general_info_data); ?>">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-3">
-                <div class="form-group">
-                    <label for="fromDateId">from date :</label>
-                    <input type="text" class="form-control form-control-user" id="fromDateId" name="fromDate" placeholder="Date..." value="<?= checkValue('fromDate', $isEditPage, $general_info_data); ?>">
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="form-group">
-                    <label for="toDateId">to date :</label>
-                    <input type="text" class="form-control form-control-user" id="toDateId" name="toDate" placeholder="Date..." value="<?= checkValue('toDate', $isEditPage, $general_info_data); ?>">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <div class="form-group">
-                    <label for="contentId">content :</label>
-                    <textarea class="form-control form-control-user" id="contentId" name="content" placeholder="Enter Content..."><?= checkValue('content', $isEditPage, $general_info_data); ?></textarea>
+                    <label for="classNameId">Class Name :</label>
+                    <input type="text" class="form-control form-control-user" id="classNameId" name="className" placeholder="Enter Class Name..." value="<?= checkValue('logo', $isEditPage, $general_info_data); ?>">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-3">
                 <?php if ($isEditPage) : ?>
-                    <input type="submit" name="submitEditEduForm" class="btn btn-primary btn-user btn-block" value="Edit Education">
+                    <input type="submit" name="submitEditToolSkillForm" class="btn btn-primary btn-user btn-block" value="Edit Tool Skill">
                 <?php else : ?>
-                    <input type="submit" name="submitAddEduForm" class="btn btn-primary btn-user btn-block" value="Add Education">
+                    <input type="submit" name="submitAddToolSkillForm" class="btn btn-primary btn-user btn-block" value="Add Tool Skill">
                 <?php endif ?>
             </div>
         </div>
@@ -131,22 +101,22 @@ function updateEduTable($id)
     <div id="result">
         <?php
         if ($isEditPage) {
-            $status = updateEduTable($id);
+            $status = updateToolSkillTable($id);
         } else {
-            $status = addEduTable();
+            $status = addToolSkillTable();
         }
         ?>
         <?php if ($status == 2) : ?>
             <?php if ($isEditPage) : ?>
-                <div class="alert alert-success">Education Edited Successfully.</div>
+                <div class="alert alert-success">Tool Skill Edited Successfully.</div>
             <?php else : ?>
-                <div class="alert alert-success">Education Added Successfully.</div>
+                <div class="alert alert-success">Tool Skill Added Successfully.</div>
             <?php endif ?>
         <?php elseif ($status == 1) : ?>
             <?php if ($isEditPage) : ?>
-                <div class="alert alert-danger">Editing Education Failed!</div>
+                <div class="alert alert-danger">Editing Tool Skill Failed!</div>
             <?php else : ?>
-                <div class="alert alert-danger">Adding Education Failed!</div>
+                <div class="alert alert-danger">Adding Tool Skill Failed!</div>
             <?php endif ?>
         <?php elseif ($status == 3) : ?>
             <div class="alert alert-danger">Please Enter Required Filed!</div>
