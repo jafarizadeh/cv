@@ -11,12 +11,13 @@
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
-    <!-- Nav Item - Dashboard -->
+    <!-- Dashboard -->
     <li class="nav-item <?= checkModuleInSidebar('main'); ?>">
         <a class="nav-link" href="index.php">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
+    <!-- Dashboard -->
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -63,7 +64,37 @@
         </div>
     </li>
     <!-- Education -->
+    <!-- Tools skills -->
+    <li class="nav-item <?= checkModuleInSidebar('add_tools_skills'); ?> <?= checkModuleInSidebar('tools_skills'); ?>">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSkill1" aria-expanded="true" aria-controls="collapseExp">
+            <i class="fas fa-fw fa-edit"></i>
+            <span>Tools Skills</span>
+        </a>
+        <div id="collapseSkill1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>add_tools_skills">Add new</a>
+                <a class="collapse-item" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>tools_skills">Show all</a>
+            </div>
+        </div>
+    </li>
+    <!-- Tools skills -->
 
+    <!-- Skills -->
+    <li class="nav-item <?= checkModuleInSidebar('add_skill'); ?> <?= checkModuleInSidebar('skills'); ?>">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSkill2" aria-expanded="true" aria-controls="collapseExp">
+            <i class="fas fa-fw fa-edit"></i>
+            <span>Skills</span>
+        </a>
+        <div id="collapseSkill2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>add_skill">Add new</a>
+                <a class="collapse-item" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>skills">Show all</a>
+            </div>
+        </div>
+    </li>
+    <!-- Skills -->
+
+    <!-- Components -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
@@ -77,8 +108,9 @@
             </div>
         </div>
     </li>
+    <!-- Components -->
 
-    <!-- Nav Item - Utilities Collapse Menu -->
+    <!-- Utilities -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
@@ -94,6 +126,7 @@
             </div>
         </div>
     </li>
+    <!-- Utilities -->
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -103,7 +136,7 @@
         Addons
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Pages -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
@@ -122,20 +155,23 @@
             </div>
         </div>
     </li>
+    <!-- Pages -->
 
-    <!-- Nav Item - Charts -->
+    <!-- Charts -->
     <li class="nav-item">
         <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
     </li>
+    <!-- Charts -->
 
-    <!-- Nav Item - Tables -->
+    <!-- Tables -->
     <li class="nav-item">
         <a class="nav-link" href="tables.html">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
     </li>
+    <!-- Tables -->
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
