@@ -1,9 +1,9 @@
 <?php
-$select = mysqli_query($GLOBALS['con'], "SELECT * FROM `skills_tools` ORDER BY `id` DESC");
+$select = mysqli_query($GLOBALS['con'], "SELECT * FROM `skills` ORDER BY `id` DESC");
 ?>
 
 <div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Tools Skills</h1>
+    <h1 class="h3 mb-4 text-gray-800">Skills</h1>
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
@@ -11,9 +11,8 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `skills_tools` ORDER BY `
                     <thead>
                         <tr>
                             <th width="5%">#</th>
-                            <th width="30%">Title</th>
-                            <th width="30%">Class</th>
-                            <th width="25%">actions</th>
+                            <th width="65%">Title</th>
+                            <th width="30%">actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -22,15 +21,10 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `skills_tools` ORDER BY `
                                 <td><?= $row['id']; ?></td>
                                 <td><?= $row['title']; ?></td>
                                 <td>
-                                    <?= $row['logo']; ?>
-                                    &nbsp;&nbsp;
-                                    <i style="font-size: 25px;" class="fab <?= $row['logo']; ?>"></i>
-                                </td>
-                                <td>
-                                    <span onclick="removeRecordFromTable('<?= $row['id']; ?>', 'tr_<?= $row['id']; ?>', 'tool_skill');" class="fa fa-trash" style="color:firebrick; cursor: pointer"></span>
+                                    <span onclick="removeRecordFromTable('<?= $row['id']; ?>', 'tr_<?= $row['id']; ?>', 'skill');" class="fa fa-trash" style="color:firebrick; cursor: pointer"></span>
                                     &nbsp;
                                     &nbsp;
-                                    <a href="<?= $GLOBALS['PANEL_ROUTE_MAIN_ADR']; ?>add_tools_skills&id=<?= $row['id']; ?>">
+                                    <a href="<?= $GLOBALS['PANEL_ROUTE_MAIN_ADR']; ?>add_skill&id=<?= $row['id']; ?>">
                                         <span class="fa fa-edit" style="color:cadetblue; cursor: pointer"></span>
                                     </a>
                                 </td>
@@ -44,7 +38,7 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `skills_tools` ORDER BY `
 </div>
 
 <script>
-    function removeRecordFromTable(rowId, elemId, mod = 'tool_skill') {
+    function removeRecordFromTable(rowId, elemId, mod = 'skill') {
         $('#' + elemId).css('background', 'orange');
         var confirmation = confirm("are you sure to delete this record from database?");
         if (confirmation) {
