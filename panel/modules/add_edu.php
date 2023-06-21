@@ -4,7 +4,11 @@ $isEditPage = false;
 if ($id != null) {
     $isEditPage = true;
 }
+<<<<<<< HEAD
 $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` WHERE `id` = '$id' limit 1");
+=======
+$select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` WHERE `id` = '1' limit 1");
+>>>>>>> Pane-edit-edu
 $general_info_data = mysqli_fetch_array($select);
 
 function checkValue($index, $isEditPage, $general_info_data)
@@ -96,8 +100,12 @@ function addEduTable()
                     <input type="submit" name="submitEditEduForm" class="btn btn-primary btn-user btn-block" value="Edit Education">
                 <?php else : ?>
                     <input type="submit" name="submitAddEduForm" class="btn btn-primary btn-user btn-block" value="Add Education">
+<<<<<<< HEAD
                 <?php endif ?>
 
+=======
+                <?php endif; ?>
+>>>>>>> Pane-edit-edu
             </div>
         </div>
     </form>
@@ -109,13 +117,23 @@ function addEduTable()
                 <div class="alert alert-success">Education Edited Successfully.</div>
             <?php else : ?>
                 <div class="alert alert-success">Education Added Successfully.</div>
+<<<<<<< HEAD
             <?php endif ?>
+=======
+            <?php endif; ?>
+
+>>>>>>> Pane-edit-edu
         <?php elseif ($status == 1) : ?>
             <?php if ($isEditPage) : ?>
                 <div class="alert alert-danger">Editing Education Failed!</div>
             <?php else : ?>
                 <div class="alert alert-danger">Adding Education Failed!</div>
+<<<<<<< HEAD
             <?php endif ?>
+=======
+            <?php endif; ?>
+
+>>>>>>> Pane-edit-edu
         <?php elseif ($status == 3) : ?>
             <div class="alert alert-danger">Please Enter Required Filed!</div>
         <?php endif; ?>
