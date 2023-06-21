@@ -86,7 +86,7 @@ function addEduTable()
                 <?php else : ?>
                     <input type="submit" name="submitAddEduForm" class="btn btn-primary btn-user btn-block" value="Add Education">
                 <?php endif ?>
-                
+
             </div>
         </div>
     </form>
@@ -94,16 +94,19 @@ function addEduTable()
     <div id="result">
         <?php $status = addEduTable(); ?>
         <?php if ($status == 2) : ?>
-            <div class="alert alert-success">Education Added Successfully.</div>
+            <?php if ($isEditPage) : ?>
+                <div class="alert alert-success">Education Edited Successfully.</div>
+            <?php else : ?>
+                <div class="alert alert-success">Education Added Successfully.</div>
+            <?php endif ?>
         <?php elseif ($status == 1) : ?>
-            <div class="alert alert-danger">Adding Education Failed!</div>
+            <?php if ($isEditPage) : ?>
+                <div class="alert alert-danger">Editing Education Failed!</div>
+            <?php else : ?>
+                <div class="alert alert-danger">Adding Education Failed!</div>
+            <?php endif ?>
         <?php elseif ($status == 3) : ?>
             <div class="alert alert-danger">Please Enter Required Filed!</div>
         <?php endif; ?>
     </div>
 </div>
-
-
-<?php if ($isEditPage) : ?>
-                <?php else : ?>
-                <?php endif ?>
