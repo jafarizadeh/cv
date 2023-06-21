@@ -4,6 +4,7 @@ $isEditPage = false;
 if ($id != null) {
     $isEditPage = true;
 }
+
 $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` WHERE `id` = '$id' limit 1");
 $general_info_data = mysqli_fetch_array($select);
 
@@ -16,7 +17,6 @@ function checkValue($index, $isEditPage, $general_info_data)
     }
     return "";
 }
-
 
 function addEduTable()
 {

@@ -2,7 +2,7 @@
 $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` ORDER BY `id` DESC");
 ?>
 
-<div class="container-fluid">
+<div class="container-fluid">z
     <h1 class="h3 mb-4 text-gray-800">Educations</h1>
     <div class="card shadow mb-4">
         <div class="card-body">

@@ -30,6 +30,11 @@ $select = mysqli_query($GLOBALS['con'], "SELECT * FROM `experience` ORDER BY `id
                                 <td><?= $row['toDate']; ?></td>
                                 <td>
                                     <span onclick="removeRecordFromTable('<?= $row['id']; ?>', 'tr_<?= $row['id']; ?>', 'exp');" class="fa fa-trash" style="color:firebrick; cursor: pointer"></span>
+                                    &nbsp;
+                                    &nbsp;
+                                    <a href="<?= $GLOBALS['PANEL_ROUTE_MAIN_ADR']; ?>add_exp&id=<?=$row['id'];?>">
+                                        <span class="fa fa-edit" style="color:cadetblue; cursor: pointer"></span>
+                                    </a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
