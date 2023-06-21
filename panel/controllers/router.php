@@ -12,6 +12,10 @@ class Router
         'exps' => 'exps.php',
         'add_edu' => 'add_edu.php',
         'edus' => 'edus.php',
+        'add_tools_skills' => 'add_tools_skills.php',
+        'tools_skills' => 'tools_skills.php',
+        'add_skill' => 'add_skill.php',
+        'skills' => 'skills.php',
         'default' => '404.php'
     ];
 
