@@ -64,7 +64,7 @@
         </div>
     </li>
     <!-- Education -->
-    <!-- skills -->
+    <!-- Tools skills -->
     <li class="nav-item <?= checkModuleInSidebar('add_tools_skills'); ?> <?= checkModuleInSidebar('tools_skills'); ?>">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSkill1" aria-expanded="true" aria-controls="collapseExp">
             <i class="fas fa-fw fa-edit"></i>
@@ -77,7 +77,22 @@
             </div>
         </div>
     </li>
-    <!-- skills -->
+    <!-- Tools skills -->
+
+    <!-- Skills -->
+    <li class="nav-item <?= checkModuleInSidebar('add_skill'); ?> <?= checkModuleInSidebar('skills'); ?>">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSkill2" aria-expanded="true" aria-controls="collapseExp">
+            <i class="fas fa-fw fa-edit"></i>
+            <span>Skills</span>
+        </a>
+        <div id="collapseSkill2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>add_skill">Add new</a>
+                <a class="collapse-item" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>skills">Show all</a>
+            </div>
+        </div>
+    </li>
+    <!-- Skills -->
 
     <!-- Components -->
     <li class="nav-item">
