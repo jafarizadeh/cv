@@ -4,8 +4,19 @@ $isEditPage = false;
 if ($id != null) {
     $isEditPage = true;
 }
-$select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` WHERE `id` = '1' limit 1");
+$select = mysqli_query($GLOBALS['con'], "SELECT * FROM `educations` WHERE `id` = '$id' limit 1");
 $general_info_data = mysqli_fetch_array($select);
+
+function checkValue($index, $isEditPage, $general_info_data)
+{
+    if ($isEditPage) {
+        if (!empty($general_info_data[$index])) {
+            return $general_info_data[$index];
+        }
+    }
+    return "";
+}
+
 
 function addEduTable()
 {
@@ -47,13 +58,13 @@ function addEduTable()
             <div class="col-3">
                 <div class="form-group">
                     <label for="titleId">title :</label>
-                    <input type="text" class="form-control form-control-user" id="titleId" name="title" placeholder="Enter Title..." value="">
+                    <input type="text" class="form-control form-control-user" id="titleId" name="title" placeholder="Enter Title..." value="<?=checkValue('title', $isEditPage, $general_info_data);?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
                     <label for="subTitleId">sub title :</label>
-                    <input type="text" class="form-control form-control-user" id="subTitleId" name="subTitle" placeholder="Enter Sub Title..." value="">
+                    <input type="text" class="form-control form-control-user" id="subTitleId" name="subTitle" placeholder="Enter Sub Title..." value="<?=checkValue('subtitle', $isEditPage, $general_info_data);?>">
                 </div>
             </div>
         </div>
@@ -61,13 +72,13 @@ function addEduTable()
             <div class="col-3">
                 <div class="form-group">
                     <label for="fromDateId">from date :</label>
-                    <input type="text" class="form-control form-control-user" id="fromDateId" name="fromDate" placeholder="Date..." value="">
+                    <input type="text" class="form-control form-control-user" id="fromDateId" name="fromDate" placeholder="Date..." value="<?=checkValue('fromDate', $isEditPage, $general_info_data);?>">
                 </div>
             </div>
             <div class="col-3">
                 <div class="form-group">
                     <label for="toDateId">to date :</label>
-                    <input type="text" class="form-control form-control-user" id="toDateId" name="toDate" placeholder="Date..." value="">
+                    <input type="text" class="form-control form-control-user" id="toDateId" name="toDate" placeholder="Date..." value="<?=checkValue('toDate', $isEditPage, $general_info_data);?>">
                 </div>
             </div>
         </div>
@@ -75,7 +86,7 @@ function addEduTable()
             <div class="col-6">
                 <div class="form-group">
                     <label for="contentId">content :</label>
-                    <textarea class="form-control form-control-user" id="contentId" name="content" placeholder="Enter Content..."></textarea>
+                    <textarea class="form-control form-control-user" id="contentId" name="content" placeholder="Enter Content..."><?=checkValue('content', $isEditPage, $general_info_data);?></textarea>
                 </div>
             </div>
         </div>
