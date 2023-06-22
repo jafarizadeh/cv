@@ -78,6 +78,21 @@ function updateAwardTable($id)
                     <input type="text" class="form-control form-control-user" id="titleId" name="title" placeholder="Enter Title..." value="<?= checkValue('title', $isEditPage, $general_info_data); ?>">
                 </div>
             </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="linkId">link :</label>
+                    <input type="text" class="form-control form-control-user" id="linkId" name="link" placeholder="Enter Link..." value="<?= checkValue('link', $isEditPage, $general_info_data); ?>">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="form-group">
+                    <label for="typeId">Type :</label>
+                    <select class="form-control form-control-user" id="typeId" name="type">
+                        <option value="award">award</option>
+                        <option value="certification">certification</option>
+                    </select>
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-3">
