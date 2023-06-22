@@ -1,4 +1,5 @@
 <?php
+
 include_once "controllers/connection.php";
 $GENERAL_INFO = getGeneralInfo($con);
 $EXP = getExperience($con);

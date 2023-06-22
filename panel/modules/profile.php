@@ -4,25 +4,18 @@
 function updateProfile()
 {
     if (postParam('submitProfileForm') != null) {
-        $title = postParam('title') != null ? postParam('title') : '';
-
-        if (!empty($title)) {
-            $select = mysqli_query($GLOBALS['con'], "UPDATE `skills` SET 
-            `title` = '$title' WHERE `id` = ''");
-
-            if ($select) {
-                return 2;
-            } else {
-                return 1;
-            }
+        $uploaded_file = move_uploaded_file($_FILES['image']['tmp_name'], 'uploads/profile.jpg');
+        if ($uploaded_file) {
+            return 2;
         } else {
-            return 3;
+            return 1;
         }
     } // when clicked is statement
     else {
         return 0;
     }
 }
+
 ?>
 
 <div class="container-fluid">
@@ -44,8 +37,10 @@ function updateProfile()
                 </div>
             </div>
         </div>
-        <div class="col-3 offset-4">
-            <input type="submit" name="submitProfileForm" class="btn btn-primary btn-user btn-block" value="Update Profile">
+        <div class="row">
+            <div class="col-3 offset-4">
+                <input type="submit" name="submitProfileForm" class="btn btn-primary btn-user btn-block" value="Update Profile">
+            </div>
         </div>
     </form>
     <br>
@@ -56,9 +51,7 @@ function updateProfile()
         <?php if ($status == 2) : ?>
             <div class="alert alert-success">Profile Updated Successfully.</div>
         <?php elseif ($status == 1) : ?>
-            <div class="alert alert-success">Updating Profile Failed.</div>
-        <?php elseif ($status == 3) : ?>
-            
-        <?php endif; ?>
+            <div class="alert alert-danger">Updating Profile Failed.</div>
+        <?php endif ?>
     </div>
 </div>
