@@ -26,7 +26,7 @@ function updateProfile()
         <div class="row">
             <div class="col-3 offset-4">
                 <div class="form-group" style="text-align: center;">
-                    <img src="http://localhost/project/cv/img/profile.png" while="150" height="150" style="border-radius: 75px;">
+                    <img src = "<?=$GLOBALS['HOST_PANEL_UPLOAD_ADR'];?>profile.jpg" while="150" height="150" style="border-radius: 75px;">
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@ function updateProfile()
         <?php
         $status = updateProfile();
         ?>
-        <?php if ($status == 2) : ?>
+        <?php if ($status == 2) : header('location:'.$GLOBALS['PANEL_ROUTE_MAIN_ADR'].'profile');?>
             <div class="alert alert-success">Profile Updated Successfully.</div>
         <?php elseif ($status == 1) : ?>
             <div class="alert alert-danger">Updating Profile Failed.</div>
