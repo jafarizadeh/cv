@@ -1,5 +1,5 @@
 <?php
-$PANEL_ROUTE_MAIN_ADR = 'index.php?module=';
+
 function getParam($param_name)
 {
     if (!empty($_GET[$param_name])) {

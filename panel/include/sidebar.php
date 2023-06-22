@@ -1,11 +1,11 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>profile">
+        <div class="sidebar-brand-icon">
+        <img src = "<?=$HOST_PANEL_UPLOAD_ADR;?>profile.jpg"  width ="40" height="40" style="border-radius: 20px;">
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3" style="text-transform: none;">Mehdi<sup style="font-size: 10px; font-weight : 100;"> ADMIN </sup></div>
     </a>
 
     <!-- Divider -->

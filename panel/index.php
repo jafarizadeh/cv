@@ -1,5 +1,9 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 include_once "../controllers/connection.php";
+include_once "../controllers/config.php";
 include_once "controllers/main.php";
 include_once "controllers/router.php";
 ?>
