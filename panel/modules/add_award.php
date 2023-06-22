@@ -22,9 +22,12 @@ function addAwardTable()
 {
     if (postParam('submitAddAwardForm') != null) {
         $title = postParam('title') != null ? postParam('title') : '';
+        $link = postParam('link') != null ? postParam('link') : '';
+        $type = postParam('type') != null ? postParam('type') : '';
+
 
         if (!empty($title)) {
-            $select = mysqli_query($GLOBALS['con'], "INSERT INTO `awards` (`title`) VALUES ('$title')");
+            $select = mysqli_query($GLOBALS['con'], "INSERT INTO `awards` (`title`, `link`, `type`) VALUES ('$title', '$link', '$type')");
 
             if ($select) {
                 return 2;
@@ -47,7 +50,7 @@ function updateAwardTable($id)
 
         if (!empty($title)) {
             $select = mysqli_query($GLOBALS['con'], "UPDATE `awards` SET 
-            `title` = '$title' WHERE `id` = '$id'");
+            `title` = '$title', `link` = '$link', `type` = '$type' WHERE `id` = '$id'");
 
             if ($select) {
                 return 2;
@@ -88,8 +91,8 @@ function updateAwardTable($id)
                 <div class="form-group">
                     <label for="typeId">Type :</label>
                     <select class="form-control form-control-user" id="typeId" name="type">
-                        <option value="award">award</option>
-                        <option value="certification">certification</option>
+                        <option <?php if (checkValue('type', $isEditPage, $general_info_data) == 'award') echo 'selected'; ?> value="award">award</option>
+                        <option <?php if (checkValue('type', $isEditPage, $general_info_data) == 'certification') echo 'selected'; ?> value="certification">certification</option>
                     </select>
                 </div>
             </div>
