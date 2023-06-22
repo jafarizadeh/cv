@@ -64,9 +64,10 @@
         </div>
     </li>
     <!-- Education -->
+  
     <!-- Tools skills -->
     <li class="nav-item <?= checkModuleInSidebar('add_tools_skills'); ?> <?= checkModuleInSidebar('tools_skills'); ?>">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSkill1" aria-expanded="true" aria-controls="collapseExp">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSkill1" aria-expanded="true" aria-controls="collapseSkill">
             <i class="fas fa-fw fa-edit"></i>
             <span>Tools Skills</span>
         </a>
@@ -81,7 +82,7 @@
 
     <!-- Skills -->
     <li class="nav-item <?= checkModuleInSidebar('add_skill'); ?> <?= checkModuleInSidebar('skills'); ?>">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSkill2" aria-expanded="true" aria-controls="collapseExp">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSkill2" aria-expanded="true" aria-controls="collapseSkill">
             <i class="fas fa-fw fa-edit"></i>
             <span>Skills</span>
         </a>
@@ -94,6 +95,21 @@
     </li>
     <!-- Skills -->
 
+    <!-- Awards -->
+    <li class="nav-item <?= checkModuleInSidebar('awards'); ?> <?= checkModuleInSidebar('add_award'); ?>">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAwards" aria-expanded="true" aria-controls="collapseAwards">
+            <i class="fas fa-fw fa-edit"></i>
+            <span>Awards & Certification</span>
+        </a>
+        <div id="collapseAwards" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>add_award">Add new</a>
+                <a class="collapse-item" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>awards">Show all</a>
+            </div>
+        </div>
+    </li>
+    <!-- Awards -->
+    
     <!-- Components -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
