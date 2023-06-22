@@ -18,6 +18,7 @@ class Router
         'skills' => 'skills.php',
         'awards' => 'awards.php',
         'add_award' => 'add_award.php',
+        'profile' => 'profile.php',
         'default' => '404.php'
     ];
 
