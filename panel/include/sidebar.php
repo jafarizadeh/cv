@@ -3,7 +3,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>profile">
         <div class="sidebar-brand-icon">
-        <img src="http://localhost/project/cv/img/profile.png" width ="40" height="40" style="border-radius: 20px;">
+        <img src = "<?=$HOST_PANEL_UPLOAD_ADR;?>profile.jpg"  width ="40" height="40" style="border-radius: 20px;">
         </div>
         <div class="sidebar-brand-text mx-3" style="text-transform: none;">Mehdi<sup style="font-size: 10px; font-weight : 100;"> ADMIN </sup></div>
     </a>
