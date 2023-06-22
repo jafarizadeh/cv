@@ -29,22 +29,22 @@ function updateProfile()
 
     <h1 class="h3 mb-4 text-gray-800">Profile</h1>
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <div class="row">
-            <div class="col-3">
+            <div class="col-3 offset-4">
                 <div class="form-group" style="text-align: center;">
                     <img src="http://localhost/project/cv/img/profile.png" while="150" height="150" style="border-radius: 75px;">
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-3">
+            <div class="col-3 offset-4">
                 <div class="form-group">
                     <input type="file" required class="form-control form-control-user" id="imageId" name="image">
                 </div>
             </div>
         </div>
-        <div class="col-3">
+        <div class="col-3 offset-4">
             <input type="submit" name="submitProfileForm" class="btn btn-primary btn-user btn-block" value="Update Profile">
         </div>
     </form>
@@ -58,7 +58,7 @@ function updateProfile()
         <?php elseif ($status == 1) : ?>
             <div class="alert alert-success">Updating Profile Failed.</div>
         <?php elseif ($status == 3) : ?>
-            <div class="alert alert-danger">Please Enter Required Filed!</div>
+            
         <?php endif; ?>
     </div>
 </div>
