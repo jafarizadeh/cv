@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= $PANEL_ROUTE_MAIN_ADR; ?>profile">
         <div class="sidebar-brand-icon">
         <img src="http://localhost/project/cv/img/profile.png" width ="40" height="40" style="border-radius: 20px;">
         </div>
