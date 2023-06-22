@@ -47,6 +47,8 @@ function updateAwardTable($id)
 {
     if (postParam('submitEditAwardForm') != null) {
         $title = postParam('title') != null ? postParam('title') : '';
+        $link = postParam('link') != null ? postParam('link') : '';
+        $type = postParam('type') != null ? postParam('type') : ''; 
 
         if (!empty($title)) {
             $select = mysqli_query($GLOBALS['con'], "UPDATE `awards` SET 

@@ -21,6 +21,9 @@ switch ($ACTION) {
             case 'skill':
                 $query = "DELETE FROM `skills` WHERE `id` = '$recordId'";
                 break; // break skill mod case end #
+            case 'awards':
+                $query = "DELETE FROM `awards` WHERE `id` = '$recordId'";
+                break; // break awards mod case end #
         } // end mod swith
         $result = mysqli_query($con, $query);
         if ($result) {
