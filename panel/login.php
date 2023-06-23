@@ -23,9 +23,7 @@ include_once "controllers/router.php";
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -52,14 +50,10 @@ include_once "controllers/router.php";
                                     </div>
                                     <form class="user" method="post">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp" 
-                                                name="username"
-                                                placeholder="Enter Username...">
+                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" name="username" placeholder="Enter Username...">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" name ="password" placeholder="Password">
+                                            <input type="password" class="form-control form-control-user" id="exampleInputPassword" name="password" placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -70,11 +64,18 @@ include_once "controllers/router.php";
                                         </div>
                                         <input type="submit" value="Login" class="btn btn-primary btn-user btn-block" name="btnLogin">
                                         <?php
-                                        if(postParam('btnLogin') != null){
-                                            $username = postParam('username') ? postParam('username') == null : '';                                       
+                                        if (postParam('btnLogin') != null) {
+                                            $username = postParam('username') ? postParam('username') == null : '';
                                             $username = postParam('password') ? postParam('password') == null : '';
                                             $password = hashPassword($password);
                                             $select = mysqli_query($con, "SELECT `id` FROM `users` WHERE `username` = '$username' && `password` = ");
+                                            if (mysqli_num_rows($select) > 0) {
+                                                header('location: index.php?module=main');
+                                                //success
+                                            } else {
+                                                echo '<div class="alert-danger">Login failed</div>';
+                                                //failed
+                                            }
                                         } // clicked at btnLogin                                 
                                         ?>
                                     </form>
