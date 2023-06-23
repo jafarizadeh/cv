@@ -6,7 +6,11 @@ include_once "../controllers/connection.php";
 include_once "../controllers/config.php";
 include_once "controllers/main.php";
 include_once "controllers/router.php";
+if (!isUserLoggedIn()){
+    header('location: login.php');
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

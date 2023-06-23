@@ -48,3 +48,17 @@ function includeByCheck($path, $path404 = "")
         }
     }
 }
+
+function isUserLoggedIn()
+{
+    if (!empty($_SESSION['userLogin'])) {
+        $value = $_SESSION['userLogin'];
+        if ($value) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
