@@ -71,6 +71,7 @@ include_once "controllers/router.php";
                                             
                                             $select = mysqli_query($con, "SELECT `id` FROM `users` WHERE `username` = '$username' AND `password` = '$password'");
                                             if (mysqli_num_rows($select) > 0) {
+                                                $_SESSION['userLogin'] = true;
                                                 header('location: index.php?module=main');
                                                 //success
                                             } else {
