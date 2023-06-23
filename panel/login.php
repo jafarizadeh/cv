@@ -50,7 +50,7 @@ include_once "controllers/router.php";
                                     </div>
                                     <form class="user" method="post">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" name="username" placeholder="Enter Username...">
+                                            <input type="text" class="form-control form-control-user" name="username" placeholder="Enter Username...">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="exampleInputPassword" name="password" placeholder="Password">
@@ -65,15 +65,16 @@ include_once "controllers/router.php";
                                         <input type="submit" value="Login" class="btn btn-primary btn-user btn-block" name="btnLogin">
                                         <?php
                                         if (postParam('btnLogin') != null) {
-                                            $username = postParam('username') ? postParam('username') == null : '';
-                                            $username = postParam('password') ? postParam('password') == null : '';
+                                            $username = postParam('username') != null ? postParam('username') : '';
+                                            $password = postParam('password') != null ? postParam('password') : '';
                                             $password = hashPassword($password);
-                                            $select = mysqli_query($con, "SELECT `id` FROM `users` WHERE `username` = '$username' && `password` = ");
+                                            
+                                            $select = mysqli_query($con, "SELECT `id` FROM `users` WHERE `username` = '$username' AND `password` = '$password'");
                                             if (mysqli_num_rows($select) > 0) {
                                                 header('location: index.php?module=main');
                                                 //success
                                             } else {
-                                                echo '<div class="alert-danger">Login failed</div>';
+                                                echo '<br><div class="alert-danger">Login failed</div>';
                                                 //failed
                                             }
                                         } // clicked at btnLogin                                 
